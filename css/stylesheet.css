@@ -1,23 +1,52 @@
-h1 {
+#header {
+  background-color: ##019974;
+  outline: solid #004C3A; 
+}
 
+h1 {
 }
 
 h2 {
-
 }
 
 #to-do {
-
 }
 
-button #enter-button {
-
+ul {
+  list-style-type: none;
+  outline: solid #004C3A;
 }
 
-.done-button {
-
+.to-do-item {
+  background-color: #019974;
+  outline: solid #004C3A;
 }
 
-.delete-button {
-
+textarea {
+  background-color: #019974;
+  outline: none;
+  border: none;
 }
+
+button {
+    background-color: #18E5B3;
+    border: 1px solid #004C3A;
+    color: #004C3A;
+}
+
+button:hover {
+    background-color: #992601;
+}
+
+button:focus {
+  outline: none;
+  background-color: #992601;
+}
+
+/*
+dark green #004C3A
+medium green #019974
+light green #18E5B3
+dark red #4C1200
+medium red #992601
+*/

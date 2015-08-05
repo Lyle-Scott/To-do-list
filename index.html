@@ -3,18 +3,26 @@
  <head>
   <meta charset="UTF-8">
   <title>title</title>
-  <link rel="stylesheet" href="stylesheet.css" type="text/css">
+  <link rel="stylesheet" href="css/stylesheet.css" type="text/css">
  </head>
  <body>
   <header>
     <h1>Need to do...</h1>
     <form>
-      <input type="text" name="to-do"></input>
-      <button type="submit" id="enter-button"></button>
+      <textarea id="newTask" placeholder="new task"></textarea></input>
+      <button type="button" id="submit-task">ENTER</button>
     </form>
   </header>
-    
-
+  <ul id="tasks">
+    <div class="to-do-item">
+      <textarea>task[i]</textarea>
+      <button type="button" id="update">UPDATE</button>
+      <button type="button" id="done">DONE</button>
+      <button type="button" id="delete">DELETE</button>
+    </div>
+    <li>
+    </li>
+  </ul>
   <script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
   <script src="js/to-do-list.js"></script>
  </body>
