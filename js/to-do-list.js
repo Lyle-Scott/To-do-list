@@ -1,7 +1,11 @@
 'use strict'
 
-var Tasklist = {
-list: []
+if (localStorage.Tasklist) {
+  var Tasklist = JSON.parse(localStorage.Tasklist);
+} else {
+  var Tasklist = {
+    list: []
+  }
 };
 
 var Item = function (task) {
@@ -22,9 +26,11 @@ var done = function(index) {
       Tasklist.list[index].done = true;
       $('#item' + index).css("background-color", "#D3D9EE");
       $('#box' + index).css("background-color", "#D3D9EE");
+      $('#save' + index).css("background-color", "#C79DB4").css("border", "5px solid #F9FDEF");
     } else {
       $('#item' + index).css("background-color", "#75AEA7");
       $('#box' + index).css("background-color", "#75AEA7");
+      $('#save' + index).css("background-color", "#C79DB4").css("border", "5px solid #F9FDEF");
       Tasklist.list[index].done = false;
     }
   }})
@@ -53,7 +59,18 @@ var listTasks = function() {
     save(i);
     done(i);
     deleteTask(i);
+    store();
   })
+};
+
+var store = function() {
+    var session = JSON.stringify(Tasklist);
+    localStorage.Tasklist = session;
+};
+
+if (localStorage.Tasklist) {
+  var Tasklist = JSON.parse(localStorage.Tasklist);
+  listTasks();
 };
 
 $('#submit-task').on({'click': function() {
