@@ -25,8 +25,11 @@ var done = function(index) {
   }})
 };
 
-var deleteTask = function() {
-
+var deleteTask = function(index) {
+  $('#delete' + index).on({'click': function() {
+    Task.list.splice(index, 1);
+    listTasks();
+  }})
 };
 
 var listTasks = function() {
@@ -35,6 +38,7 @@ var listTasks = function() {
     $('#tasks').append('<div class=\"to-do-item\" id=\"box' + i + '\"><textarea id=\"item' + i + '\">' + Task.list[i] + '</textarea><button type=\"button\" id=\"update' + i + '\">UPDATE</button><button type=\"button\" id=\"done' + i + '\">DONE</button><button type=\"button\" id=\"delete' + i + '\">DELETE</button></div>');
     update(i);
     done(i);
+    deleteTask(i);
   })
 };
 
