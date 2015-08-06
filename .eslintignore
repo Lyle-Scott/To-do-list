@@ -1,0 +1,6 @@
+**/node_modules/
+README.md
+img/*
+**.html
+css/**.css
+js/jquery-1.11.0.min.js

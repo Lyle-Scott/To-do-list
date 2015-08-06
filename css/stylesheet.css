@@ -33,17 +33,6 @@ h1 {
   color: #F9FDEF;
 }
 
-h2 {
-}
-
-#to-do {
-}
-
-ul {
-  list-style-type: none;
-  outline: solid #F9FDEF;
-}
-
 .to-do-item  {
   font-family: 'Dekko', cursive;
   position: relative;

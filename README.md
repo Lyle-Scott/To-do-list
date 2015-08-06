@@ -1,4 +1,5 @@
 # To-do-list
+Lyle Scott, August 2015
 
 bubble animation modified from
 http://codepen.io/jonitrythall/pen/bivaG
