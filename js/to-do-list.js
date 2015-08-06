@@ -9,24 +9,22 @@ var Item = function (task) {
  this.done = false;
 }
 
-var update = function(index) {
-  $('#update' + index).on({'click': function() {
+var save = function(index) {
+  $('#save' + index).on({'click': function() {
     Tasklist.list[index].task = ($('#item' + index).val());
-    console.log(Tasklist.list[index].task);
+    listTasks();
   }})
 };
 
 var done = function(index) {
   $('#done' + index).on({'click': function() {
-    console.log('clicked', Tasklist.list[index].done);
     if (Tasklist.list[index].done == false) {
       Tasklist.list[index].done = true;
-      $('#item' + index).css("background-color", "#4C1200");
-      $('#box' + index).css("background-color", "#4C1200");
-      console.log("changed to dark red");
+      $('#item' + index).css("background-color", "#D3D9EE");
+      $('#box' + index).css("background-color", "#D3D9EE");
     } else {
-      $('#item' + index).css("background-color", "#019974");
-      $('#box' + index).css("background-color", "#019974");
+      $('#item' + index).css("background-color", "#75AEA7");
+      $('#box' + index).css("background-color", "#75AEA7");
       Tasklist.list[index].done = false;
     }
   }})
@@ -42,12 +40,12 @@ var deleteTask = function(index) {
 var listTasks = function() {
   $('#tasks').empty();
   $.each(Tasklist.list, function(i, val) {
-    $('#tasks').append('<div class=\"to-do-item\" id=\"box' + i + '\"><textarea id=\"item' + i + '\">' + Tasklist.list[i].task + '</textarea><button type=\"button\" id=\"update' + i + '\">UPDATE</button><button type=\"button\" id=\"done' + i + '\">DONE</button><button type=\"button\" id=\"delete' + i + '\">DELETE</button></div>');
+    $('#tasks').append('<div class=\"to-do-item\" id=\"box' + i + '\"><textarea id=\"item' + i + '\">' + Tasklist.list[i].task + '</textarea><button type=\"button\" id=\"save' + i + '\">SAVE</button><button type=\"button\" id=\"done' + i + '\">DONE</button><button type=\"button\" id=\"delete' + i + '\">DELETE</button></div>');
       if (Tasklist.list[i].done) {
-        $('#item' + i).css("background-color", "#4C1200");
-        $('#box' + i).css("background-color", "#4C1200");
+        $('#item' + i).css("background-color", "#D3D9EE");
+        $('#box' + i).css("background-color", "#D3D9EE");
       };
-    update(i);
+    save(i);
     done(i);
     deleteTask(i);
   })
