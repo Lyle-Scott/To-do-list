@@ -1,9 +1,35 @@
-#header {
-  background-color: ##019974;
+body {
+  background-color: #004C3A;
+
+}
+::-webkit-input-placeholder {
+   color: #004C3A;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #004C3A;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #004C3A;  
+}
+
+:-ms-input-placeholder {  
+   color: #004C3A;  
+}
+
+header {
+  font-family: 'Patrick Hand', cursive;
+  background-color: #019974;
   outline: solid #004C3A; 
+  min-width: 350px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 h1 {
+  font-size: 32px;
 }
 
 h2 {
@@ -16,22 +42,46 @@ ul {
   list-style-type: none;
   outline: solid #004C3A;
 }
-
-.to-do-item {
+/*
+#tasks{  
+  position: relative;
+  margin-top: 10px;
   background-color: #019974;
   outline: solid #004C3A;
+  min-width: 350px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+*/
+.to-do-item  {
+  font-family: 'Patrick Hand', cursive;
+  position: relative;
+  margin-top: 10px;
+  background-color: #019974;
+  outline: solid #004C3A;
+  min-width: 350px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 textarea {
   background-color: #019974;
   outline: none;
   border: none;
+  min-width: 300px;
+  color: #004C3A;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 20px;
 }
 
 button {
-    background-color: #18E5B3;
-    border: 1px solid #004C3A;
-    color: #004C3A;
+  font-family: 'Ropa Sans', sans-serif;
+  background-color: #18E5B3;
+  border: 1px solid #004C3A;
+  color: #004C3A;
+  margin: 10px;
 }
 
 button:hover {
