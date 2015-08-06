@@ -1,0 +1,22 @@
+{
+  "name": "to-do-list",
+  "version": "1.0.0",
+  "description": "Lyle Scott, August 2015",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lyle-Scott/To-do-list.git"
+  },
+  "author": "Lyle Scott",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lyle-Scott/To-do-list/issues"
+  },
+  "homepage": "https://github.com/Lyle-Scott/To-do-list#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
