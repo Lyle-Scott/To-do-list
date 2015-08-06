@@ -11,8 +11,18 @@ var update = function(index) {
   }})
 };
 
-var done = function() {
-
+var done = function(index) {
+  $('#done' + index).on({'click': function() {
+    console.log('clicked');
+    if ($("#item" + index).css('background-color')=="rgb(1, 153, 116)") {
+      $('#item' + index).css("background-color", "#4C1200");
+      $('#box' + index).css("background-color", "#4C1200");
+      console.log("changed to dark red");
+    } else {
+      $('#item' + index).css("background-color", "#019974");
+      $('#box' + index).css("background-color", "#019974");
+    }
+  }})
 };
 
 var deleteTask = function() {
@@ -22,8 +32,9 @@ var deleteTask = function() {
 var listTasks = function() {
   $('#tasks').empty();
   $.each(Task.list, function(i, val) {
-    $('#tasks').append('<div class=\"to-do-item\"><textarea id=\"item' + i + '\">' + Task.list[i] + '</textarea><button type=\"button\" id=\"update' + i + '\">UPDATE</button><button type=\"button\" id=\"done' + i + '\">DONE</button><button type=\"button\" id=\"delete' + i + '\">DELETE</button></div>');
+    $('#tasks').append('<div class=\"to-do-item\" id=\"box' + i + '\"><textarea id=\"item' + i + '\">' + Task.list[i] + '</textarea><button type=\"button\" id=\"update' + i + '\">UPDATE</button><button type=\"button\" id=\"done' + i + '\">DONE</button><button type=\"button\" id=\"delete' + i + '\">DELETE</button></div>');
     update(i);
+    done(i);
   })
 };
 
