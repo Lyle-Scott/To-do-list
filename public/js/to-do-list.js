@@ -100,3 +100,5 @@ $('#submit-task').on({'click': function() {
     listTasks();
   }
 }});
+
+$('#new-task').focus();
