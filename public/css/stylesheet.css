@@ -32,6 +32,7 @@ header {
 h1 {
   font-size: 32px;
   color: #F9FDEF;
+  margin-bottom: 0px;
 }
 
 .to-do-item  {
@@ -41,7 +42,7 @@ h1 {
   background-color: #75AEA7;
   outline: solid #F9FDEF;
   min-width: 350px;
-  max-width: 850px;
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
 }
