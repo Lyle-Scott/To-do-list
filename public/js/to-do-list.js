@@ -22,7 +22,7 @@ var flag = function(index) {
       $('#save' + index).css('background-color', '#C79DB4').css('border', '5px solid #F9FDEF');
       $('#flag' + index).css('visibility', 'visible');
     } else {
-      $('#item' + index).css('background-color', '#75AEA7').css('color', '#F9FDEF').css('font-weight', 'normal').css('font-size', '20px');
+      $('#item' + index).css('background-color', '#75AEA7').css('color', '#F9FDEF').css('font-weight', 'normal');
       $('#box' + index).css('background-color', '#75AEA7');
       $('#save' + index).css('background-color', '#C79DB4').css('border', '5px solid #F9FDEF');
       $('#flag' + index).css('visibility', 'hidden');
