@@ -11,7 +11,7 @@ app.get('/', function(request, response) {
 });
 
 app.get('/*', function(request, response) {
-  response.sendFile(path.join(__dirname,'/public/404.html'));
+  response.sendFile(path.join(__dirname, '/public/404.html'));
 });
 
 app.listen(app.get('port'), function() {

@@ -57,13 +57,13 @@ var deleteTask = function(index) {
 };
 
 var fadeButton = function(button, index) {
-  $(button + index).css({opacity:0.5});
+  $(button + index).css({opacity: 0.5});
   $(button + index).mouseenter(function() {
     $(button + index).fadeTo('slow', 1);
-  })
+  });
   $(button + index).mouseleave(function() {
     $(button + index).fadeTo('slow', 0.5);
-  })
+  });
 };
 
 var listTasks = function() {
@@ -93,7 +93,7 @@ var listTasks = function() {
       deleteTask(i);
       store();
       $('#box' + i).slideDown('fast', function () {
-      })
+      });
   });
 };
 
@@ -116,5 +116,5 @@ $('#submit-task').on({'click': function() {
   }
 }});
 
-fadeButton('#submit-task', "");
+fadeButton('#submit-task', '');
 $('#new-task').focus();
