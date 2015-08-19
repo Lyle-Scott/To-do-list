@@ -92,7 +92,7 @@ var listTasks = function() {
       flag(i);
       deleteTask(i);
       store();
-      $('#box' + i).slideDown('slow', function () {
+      $('#box' + i).slideDown('fast', function () {
       })
   });
 };
