@@ -175,6 +175,9 @@ visibility: hidden;
     width: auto;
   }
   textarea {
+    font-size: 4em;
+  }
+  button {
     font-size: 2em;
   }
   #bubbles {
