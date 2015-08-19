@@ -1,5 +1,5 @@
 body {
-  background-color: #F9FDEF;
+  background-color: black;
   background-image: url("../img/floral.jpg");
 }
 ::-webkit-input-placeholder {
@@ -45,6 +45,7 @@ h1 {
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
+  display: none;
 }
 
 textarea {
@@ -89,10 +90,6 @@ visibility: hidden;
  seafoam #BEF2DC
  spruce #75AEA7
  rose #C79DB4*/
-
- body {
-  background-color: #42a1c6;
-}
 
 /* Bubbles */
 .bubbles {
@@ -169,5 +166,18 @@ visibility: hidden;
 @keyframes up {
   100% {
     transform: translateY(-800px);
+  }
+}
+
+@media screen and (max-width: 1020px) { 
+  header, body, .to-do-item {
+    float: none;
+    width: auto;
+  }
+  textarea {
+    font-size: 2em;
+  }
+  #bubbles {
+    display: none;
   }
 }

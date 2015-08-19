@@ -14,10 +14,10 @@ var Item = function (task) {
 };
 
 var flag = function(index) {
-  $('#flagButton' + index).on({'click': function() {
+  $('#flag-button' + index).on({'click': function() {
     if (Tasklist.list[index].flag === false) {
       Tasklist.list[index].flag = true;
-      $('#item' + index).css('background-color', '#D3D9EE').css('color', '#75AEA7').css('font-weight', 'bold').css('font-size', '24px');
+      $('#item' + index).css('background-color', '#D3D9EE').css('color', '#75AEA7').css('font-weight', 'bold');
       $('#box' + index).css('background-color', '#D3D9EE');
       $('#save' + index).css('background-color', '#C79DB4').css('border', '5px solid #F9FDEF');
       $('#flag' + index).css('visibility', 'visible');
@@ -56,12 +56,22 @@ var deleteTask = function(index) {
   }});
 };
 
+var fadeButton = function(button, index) {
+  $(button + index).css({opacity:0.5});
+  $(button + index).mouseenter(function() {
+    $(button + index).fadeTo('slow', 1);
+  })
+  $(button + index).mouseleave(function() {
+    $(button + index).fadeTo('slow', 0.5);
+  })
+};
+
 var listTasks = function() {
   $('#tasks').empty();
   $.each(Tasklist.list, function(i) {
-    $('#tasks').prepend('<div class=\"to-do-item\" id=\"box' + i + '\"><textarea id=\"item' + i + '\">' + Tasklist.list[i].task + '</textarea><button type=\"button\" id=\"save' + i + '\">SAVE</button><button type=\"button\" id=\"flagButton' + i + '\">FLAG</button><button type=\"button\" id=\"delete' + i + '\">DELETE</button><image id=\"flag' + i + '\"class=\"flag\"src=img/flag.png/></div>');
+    $('#tasks').prepend('<div class=\"to-do-item\" id=\"box' + i + '\"><textarea id=\"item' + i + '\">' + Tasklist.list[i].task + '</textarea><button type=\"button\" id=\"save' + i + '\">SAVE</button><button type=\"button\" id=\"flag-button' + i + '\">FLAG</button><button type=\"button\" id=\"delete' + i + '\">DELETE</button><image id=\"flag' + i + '\"class=\"flag\"src=img/flag.png/></div>');
       if (Tasklist.list[i].flag) {
-        $('#item' + i).css('background-color', '#D3D9EE').css('color', '#75AEA7').css('font-weight', 'bold').css('font-size', '24px');
+        $('#item' + i).css('background-color', '#D3D9EE').css('color', '#75AEA7').css('font-weight', 'bold');
         $('#box' + i).css('background-color', '#D3D9EE');
         $('#flag' + i).css('visibility', 'visible');
       }
@@ -75,10 +85,15 @@ var listTasks = function() {
       $('#new-task').change(function() {
         $('#submit-task').css('color', '#D3D9EE').css('background-color', '#C79DB4').css('border', '5px solid #F9FDEF');
       });
+      fadeButton('#save', i);
+      fadeButton('#flag-button', i);
+      fadeButton('#delete', i);
       save(i);
       flag(i);
       deleteTask(i);
       store();
+      $('#box' + i).slideDown('slow', function () {
+      })
   });
 };
 
@@ -101,4 +116,5 @@ $('#submit-task').on({'click': function() {
   }
 }});
 
+fadeButton('#submit-task', "");
 $('#new-task').focus();
